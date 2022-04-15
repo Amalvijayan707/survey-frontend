@@ -1,0 +1,35 @@
+<div class="card" style="height: 50vh; margin: 5rem;">
+<form #empForm ="ngForm" (ngSubmit)="empForm.valid&&onSubmit()">
+
+    <div class="row">
+        <div class="col-md-3">
+            <label>First Name</label>
+            <input type="text" name="firstName" required #firstName="ngModel" class="form-control" [(ngModel)]="data.firstName">
+            <small class="text-danger" *ngIf="empForm.submitted&&firstName.errors?.['required']">First Name required</small>
+        </div>
+        <div class="col-md-3">
+            <label>Middle Name</label>
+            <input type="text" name="middleName" required #middleName="ngModel" class="form-control" [(ngModel)]="data.middleName">
+            <small class="text-danger" *ngIf="empForm.submitted&&middleName.errors?.['required']">Middle Name required</small>
+        </div>
+        <div class="col-md-3">
+            <label>Last Name</label>
+            <input type="text" name="lastName" required #lastName="ngModel" class="form-control" [(ngModel)]="data.lastName">
+            <small class="text-danger" *ngIf="empForm.submitted&&lastName.errors?.['required']">Last Name required</small>
+        </div>
+        <div class="col-md-3">
+            <label>Age</label>
+            <input type="number" name="age" required #age="ngModel" class="form-control" [(ngModel)]="data.age">
+            <small class="text-danger" *ngIf="empForm.submitted&&age.errors?.['required']">Age required</small>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center;">
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+
+</form>
+</div>
